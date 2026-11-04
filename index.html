@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GravTri — The Gravity Trident: multi-scale and multi-messenger cosmological tests of general relativity.">
+  <meta name="description" content="GravTri — The Gravity Trident: a unified cosmological probe of gravity with galaxy clusters.">
   <title>GravTri | The Gravity Trident</title>
 
   <style>
@@ -26,7 +26,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 85px;
+      scroll-padding-top: 110px;
     }
 
     body {
@@ -58,34 +58,38 @@
     }
 
     .nav-inner {
-      max-width: var(--max-width);
+      max-width: 1450px;
       margin: auto;
       padding: 16px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 28px;
     }
 
     .brand {
-      font-size: 1.45rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.4;
       color: white;
       text-decoration: none;
+      max-width: 650px;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
     }
 
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: color 0.2s;
     }
 
@@ -221,10 +225,10 @@
     }
 
     .pillar-number {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--accent);
-      letter-spacing: 0.15em;
+      letter-spacing: 0.08em;
     }
 
     .science-card h3 {
@@ -325,6 +329,27 @@
       color: var(--muted);
     }
 
+    .email-button {
+      background: transparent;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      color: var(--accent-light);
+      padding: 10px 20px;
+      font: inherit;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .email-button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    #email-display {
+      margin-top: 15px;
+      overflow-wrap: anywhere;
+    }
+
     /* FOOTER */
 
     footer {
@@ -335,17 +360,40 @@
       font-size: 0.9rem;
     }
 
-    /* MOBILE */
+    /* TABLET AND MOBILE */
 
-    @media (max-width: 800px) {
+    @media (max-width: 1100px) {
       .nav-inner {
         flex-direction: column;
         gap: 12px;
+        text-align: center;
+      }
+
+      .brand {
+        max-width: 100%;
       }
 
       .nav-links {
-        gap: 12px 18px;
         justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      html {
+        scroll-padding-top: 145px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        padding: 14px 20px;
+      }
+
+      .brand {
+        font-size: 0.9rem;
+      }
+
+      .nav-links {
+        gap: 10px 16px;
       }
 
       .science-grid,
@@ -368,7 +416,7 @@
       }
 
       html {
-        scroll-padding-top: 140px;
+        scroll-padding-top: 180px;
       }
     }
   </style>
@@ -380,7 +428,10 @@
 
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-inner">
-      <a class="brand" href="#home">GravTri</a>
+      <a class="brand" href="#home">
+        GravTri - The Gravity Trident: A unified cosmological
+        probe of gravity with galaxy clusters
+      </a>
 
       <div class="nav-links">
         <a href="#home">Home</a>
@@ -407,8 +458,7 @@
 
       <p>
         A multi-scale and multi-messenger approach to
-        testing general relativity through galaxy clusters,
-        cosmic large-scale structure and gravitational waves.
+        testing general relativity through galaxy clusters.
       </p>
 
       <a class="hero-button" href="#science">
@@ -421,21 +471,22 @@
     <section id="science" class="section">
       <div class="section-heading">
         <div class="section-label">Research</div>
-        <h2>Three pillars. One test of gravity.</h2>
+        <h2>Three probes. One framework for testing gravity.</h2>
       </div>
 
       <p class="section-intro">
-        GravTri combines three complementary observational
-        probes to investigate gravitational physics across
-        different spatial scales, connecting the internal
-        structure of galaxy clusters with cosmological
-        structure formation and gravitational-wave lensing.
+        GravTri combines gravitational redshifts,
+        strong lensing of gravitational waves, and
+        galaxy-cluster clustering as complementary
+        observational probes of gravity across
+        multiple physical scales, all using
+        galaxy clusters.
       </p>
 
       <div class="science-grid">
 
         <article class="science-card">
-          <div class="pillar-number">PILLAR 01</div>
+          <div class="pillar-number">Pillar I</div>
           <h3>Gravitational Redshifts</h3>
           <p>
             Measuring gravitational redshifts in galaxy
@@ -445,7 +496,7 @@
         </article>
 
         <article class="science-card">
-          <div class="pillar-number">PILLAR 02</div>
+          <div class="pillar-number">Pillar II</div>
           <h3>Galaxy-Cluster Clustering</h3>
           <p>
             Using the spatial distribution and clustering
@@ -456,7 +507,7 @@
         </article>
 
         <article class="science-card">
-          <div class="pillar-number">PILLAR 03</div>
+          <div class="pillar-number">Pillar III</div>
           <h3>Gravitational-Wave Lensing</h3>
           <p>
             Exploiting the strong gravitational lensing
@@ -484,8 +535,6 @@
         scientific pillars of GravTri.
       </p>
 
-      <!-- Add actual papers here -->
-
       <article class="publication">
         <h3>Publications will appear here</h3>
         <p>
@@ -507,19 +556,17 @@
 
       <p class="section-intro">
         Researchers and collaborators contributing
-        to the GravTri scientific programme.
+        to GravTri.
       </p>
 
       <div class="team-grid">
-
         <article class="team-card">
           <h3>Eleni Tsaprazi</h3>
           <p>
             Project Lead<br>
-            Observatoire de Paris – PSL
+            LUX, Observatoire de Paris
           </p>
         </article>
-
       </div>
     </section>
 
@@ -533,17 +580,11 @@
         <h2>Latest News</h2>
       </div>
 
-      <article class="news-item">
-        <div class="news-date">November 2026</div>
-        <div>
-          <h3>GravTri website launched</h3>
-          <p>
-            The GravTri research project website is
-            established to present the scientific
-            programme and its developments.
-          </p>
-        </div>
-      </article>
+      <p class="section-intro">
+        Research updates, publications, conferences
+        and scientific developments will be
+        featured here.
+      </p>
     </section>
 
     <hr class="divider">
@@ -560,24 +601,24 @@
         <h3>Eleni Tsaprazi</h3>
 
         <p>
-          Observatoire de Paris – PSL<br>
-          France
+          LUX<br>
+          Observatoire de Paris<br>
+          Université PSL<br>
+          Sorbonne Université<br>
+          CNRS<br>
+          92190 Meudon, France
         </p>
 
-        <p>
-          Email:
-          <a href="mailto:eleni.tsaprazi@obspm.fr">
-            eleni.tsaprazi@obspm.fr
-          </a>
-        </p>
+        <button
+          id="reveal-email"
+          class="email-button"
+          type="button"
+          aria-controls="email-display"
+          aria-expanded="false">
+          Reveal email
+        </button>
 
-        <p>
-          GitHub:
-          <a href="https://github.com/GravTri"
-             target="_blank" rel="noopener noreferrer">
-            github.com/GravTri
-          </a>
-        </p>
+        <p id="email-display" aria-live="polite"></p>
       </div>
     </section>
 
@@ -591,8 +632,34 @@
   </footer>
 
   <script>
+    // Automatically update the copyright year
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    // Construct the email only after user interaction
+    const emailButton =
+      document.getElementById("reveal-email");
+
+    const emailDisplay =
+      document.getElementById("email-display");
+
+    emailButton.addEventListener("click", function () {
+      const localParts = ["eleni", "tsaprazi"];
+      const domainParts = ["obspm", "fr"];
+
+      const address =
+        localParts.join(".") +
+        String.fromCharCode(64) +
+        domainParts.join(".");
+
+      const link = document.createElement("a");
+      link.href = "mailto:" + address;
+      link.textContent = address;
+
+      emailDisplay.replaceChildren(link);
+      emailButton.setAttribute("aria-expanded", "true");
+      emailButton.hidden = true;
+    });
   </script>
 
 </body>
