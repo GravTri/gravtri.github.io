@@ -266,6 +266,10 @@
       border-bottom: 1px solid var(--border);
     }
 
+    .publication:last-child {
+      border-bottom: none;
+    }
+
     .publication h3 {
       margin: 0 0 8px;
       font-size: 1.15rem;
@@ -445,22 +449,22 @@
 
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-inner">
+
       <a class="brand" href="#home">
         GravTri - The Gravity Trident: A unified cosmological
         probe of gravity with galaxy clusters
       </a>
 
-      
-<div class="nav-links">
-  <a href="#home">Home</a>
-  <a href="#team">Team</a>
-  <a href="#science">Science</a>
-  <a href="#facilities">Facilities</a>
-  <a href="#publications">Publications</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-</div>
-      
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#science">Science</a>
+        <a href="#team">Team</a>
+        <a href="#publications">Publications</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </div>
+
     </div>
   </nav>
 
@@ -469,16 +473,18 @@
     <!-- HOME -->
 
     <header id="home" class="hero">
+
       <div class="hero-label">
         Cosmology · Gravity · Large-Scale Structure
       </div>
 
-  <div class="hero-logo">
-  <img
-    src="/GravTri%20Cosmic%20Leaf%20Logo%20White.png"
-    alt="GravTri — The Gravity Trident"
-  >
-  </div>
+      <div class="hero-logo">
+        <img
+          src="/GravTri%20Cosmic%20Leaf%20Logo%20White.png"
+          alt="GravTri — The Gravity Trident"
+        >
+      </div>
+
       <h2>The Gravity Trident</h2>
 
       <p>
@@ -489,11 +495,77 @@
       <a class="hero-button" href="#science">
         Explore the Science
       </a>
+
     </header>
+
+    <!-- SCIENCE -->
+
+    <section id="science" class="section">
+
+      <div class="section-heading">
+        <div class="section-label">Research</div>
+        <h2>Three probes. One framework for testing gravity.</h2>
+      </div>
+
+      <p class="section-intro">
+        GravTri combines gravitational redshifts,
+        strong lensing of gravitational waves, and
+        clustering as complementary
+        observational probes of gravity across
+        multiple physical scales, all using
+        galaxy clusters.
+      </p>
+
+      <div class="science-grid">
+
+        <article class="science-card">
+          <div class="pillar-number">
+            Pillar I: intracluster scales
+          </div>
+          <h3>Gravitational redshifts</h3>
+          <p>
+            Measuring gravitational redshifts in galaxy
+            clusters to probe the relationship between
+            gravitational potentials and mass and test
+            deviations from general relativity.
+          </p>
+        </article>
+
+        <article class="science-card">
+          <div class="pillar-number">
+            Pillar II: cluster scales
+          </div>
+          <h3>Clustering</h3>
+          <p>
+            Using the spatial distribution and clustering
+            statistics of galaxy clusters to investigate
+            the growth of cosmic structure as a function
+            of redshift to constrain departures from
+            general relativity.
+          </p>
+        </article>
+
+        <article class="science-card">
+          <div class="pillar-number">
+            Pillar III: intercluster scales
+          </div>
+          <h3>Gravitational-wave lensing</h3>
+          <p>
+            Exploiting the strong gravitational lensing
+            of gravitational waves by galaxy clusters
+            to test gravitational physics.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="divider">
 
     <!-- TEAM -->
 
     <section id="team" class="section">
+
       <div class="section-heading">
         <div class="section-label">People</div>
         <h2>Team</h2>
@@ -548,15 +620,15 @@
         </article>
 
         <article class="team-card">
-        <h3>Matteo Macchione</h3>
-        <p>
-      MSc graduate: Gravitational redshifts<br>
-      University of Bologna<br>
-      <a href="https://amslaurea.unibo.it/id/eprint/39453/"
-       target="_blank" rel="noopener noreferrer">
-      MSc Thesis
-      </a>
-    </p>
+          <h3>Matteo Macchione</h3>
+          <p>
+            MSc graduate: Gravitational redshifts<br>
+            University of Bologna<br>
+            <a href="https://amslaurea.unibo.it/id/eprint/39453/"
+               target="_blank" rel="noopener noreferrer">
+              MSc Thesis
+            </a>
+          </p>
         </article>
 
       </div>
@@ -594,106 +666,10 @@
 
     <hr class="divider">
 
-    <!-- SCIENCE -->
-
-    <section id="science" class="section">
-      <div class="section-heading">
-        <div class="section-label">Research</div>
-        <h2>Three probes. One framework for testing gravity.</h2>
-      </div>
-
-      <p class="section-intro">
-        GravTri combines gravitational redshifts,
-        strong lensing of gravitational waves, and
-        clustering as complementary
-        observational probes of gravity across
-        multiple physical scales, all using
-        galaxy clusters.
-      </p>
-
-      <div class="science-grid">
-
-        <article class="science-card">
-          <div class="pillar-number">Pillar I: intracluster scales</div>
-          <h3>Gravitational redshifts</h3>
-          <p>
-            Measuring gravitational redshifts in galaxy
-            clusters to probe the relationship between gravitational potentials
-            and mass and test deviations from general relativity.
-          </p>
-        </article>
-
-        <article class="science-card">
-          <div class="pillar-number">Pillar II: cluster scales</div>
-          <h3>Clustering</h3>
-          <p>
-            Using the spatial distribution and clustering
-            statistics of galaxy clusters to investigate
-            the growth of cosmic structure as a function of redshift to constrain
-            departures from general relativity.
-          </p>
-        </article>
-
-        <article class="science-card">
-          <div class="pillar-number">Pillar III: intercluster scales</div>
-          <h3>Gravitational-wave lensing</h3>
-          <p>
-            Exploiting the strong gravitational lensing
-            of gravitational waves by galaxy clusters to test
-            gravitational physics.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <hr class="divider">
-
-    
-    <!-- SURVEYS & FACILITIES -->
-
-    <section id="facilities" class="section">
-      <div class="section-heading">
-        <div class="section-label">International Projects</div>
-        <h2>Surveys &amp; Facilities</h2>
-      </div>
-
-      <p class="section-intro">
-        Members of the GravTri team are involved in ongoing and planned international surveys and facilities.
-      </p>
-
-      <div class="science-grid">
-        <article class="science-card">
-          <h3>Euclid</h3>
-          <a href="https://www.esa.int/Science_Exploration/Space_Science/Euclid"
-             target="_blank" rel="noopener noreferrer">
-            Mission website
-          </a>
-        </article>
-
-        <article class="science-card">
-          <h3>Wide-field Spectroscopic Telescope</h3>
-          <a href="https://wstelescope.eu/"
-             target="_blank" rel="noopener noreferrer">
-            Project website
-          </a>
-        </article>
-
-        <article class="science-card">
-          <h3>Einstein Telescope</h3>
-          <a href="https://einsteintelescope.eu/"
-             target="_blank" rel="noopener noreferrer">
-            Project website
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <hr class="divider">
-
     <!-- PUBLICATIONS -->
 
     <section id="publications" class="section">
+
       <div class="section-heading">
         <div class="section-label">Scientific Output</div>
         <h2>Publications</h2>
@@ -792,12 +768,56 @@
     </section>
 
     <hr class="divider">
-    
 
+    <!-- SURVEYS & FACILITIES -->
+
+    <section id="facilities" class="section">
+
+      <div class="section-heading">
+        <div class="section-label">International Projects</div>
+        <h2>Surveys &amp; Facilities</h2>
+      </div>
+
+      <p class="section-intro">
+        Members of the GravTri team are involved in ongoing
+        and planned international surveys and facilities.
+      </p>
+
+      <div class="science-grid">
+
+        <article class="science-card">
+          <h3>Euclid</h3>
+          <a href="https://www.esa.int/Science_Exploration/Space_Science/Euclid"
+             target="_blank" rel="noopener noreferrer">
+            Mission website
+          </a>
+        </article>
+
+        <article class="science-card">
+          <h3>Wide-field Spectroscopic Telescope</h3>
+          <a href="https://wstelescope.eu/"
+             target="_blank" rel="noopener noreferrer">
+            Project website
+          </a>
+        </article>
+
+        <article class="science-card">
+          <h3>Einstein Telescope</h3>
+          <a href="https://einsteintelescope.eu/"
+             target="_blank" rel="noopener noreferrer">
+            Project website
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="divider">
 
     <!-- NEWS -->
 
     <section id="news" class="section">
+
       <div class="section-heading">
         <div class="section-label">Updates</div>
         <h2>Latest News</h2>
@@ -808,6 +828,7 @@
         and scientific developments will be
         featured here.
       </p>
+
     </section>
 
     <hr class="divider">
@@ -815,6 +836,7 @@
     <!-- CONTACT -->
 
     <section id="contact" class="section">
+
       <div class="section-heading">
         <div class="section-label">Get in Touch</div>
         <h2>Contact</h2>
@@ -843,6 +865,7 @@
 
         <p id="email-display" aria-live="polite"></p>
       </div>
+
     </section>
 
   </main>
