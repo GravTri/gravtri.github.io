@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GravTri — The Gravity Trident: multi-scale and multi-messenger cosmological tests of general relativity.">
+  <title>GravTri | The Gravity Trident</title>
+
+  <style>
+    :root {
+      --bg: #090e1b;
+      --surface: #131d30;
+      --surface-hover: #1b2942;
+      --text: #f0f3fa;
+      --muted: #aab9d0;
+      --accent: #b6a1ff;
+      --accent-light: #e0d7ff;
+      --border: rgba(255,255,255,0.10);
+      --max-width: 1150px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent-light);
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9,14,27,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-light);
+    }
+
+    /* HOME */
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px;
+      background:
+        radial-gradient(
+          ellipse at 50% 20%,
+          rgba(116,87,190,0.27),
+          transparent 60%
+        ),
+        var(--bg);
+    }
+
+    .hero-label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(4.5rem, 12vw, 8rem);
+      line-height: 1.05;
+      letter-spacing: -0.07em;
+      margin: 0;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--accent-light);
+      margin: 14px 0 30px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.18rem;
+      color: var(--muted);
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 38px;
+      padding: 12px 30px;
+      border: 1px solid var(--accent);
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .hero-button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 90px 28px;
+      max-width: var(--max-width);
+      margin: auto;
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -0.04em;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      max-width: var(--max-width);
+      margin: auto;
+    }
+
+    /* SCIENCE */
+
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .science-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .science-card:hover {
+      background: var(--surface-hover);
+      transform: translateY(-4px);
+    }
+
+    .pillar-number {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+    }
+
+    .science-card h3 {
+      font-size: 1.35rem;
+      line-height: 1.35;
+      margin: 18px 0;
+    }
+
+    .science-card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    /* PUBLICATIONS */
+
+    .publication {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .publication h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .publication p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .publication-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    /* TEAM */
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+    }
+
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .team-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .team-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* NEWS */
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 25px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .news-date {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .news-item h3 {
+      margin: 0 0 6px;
+    }
+
+    .news-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 38px;
+      max-width: 750px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 12px 18px;
+        justify-content: center;
+      }
+
+      .science-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .section {
+        padding: 65px 24px;
+      }
+
+      .hero {
+        min-height: 65vh;
+        padding: 90px 24px;
+      }
+
+      html {
+        scroll-padding-top: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#home">GravTri</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#science">Science</a>
+        <a href="#publications">Publications</a>
+        <a href="#team">Team</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HOME -->
+
+    <header id="home" class="hero">
+      <div class="hero-label">
+        Cosmology · Gravity · Large-Scale Structure
+      </div>
+
+      <h1>GravTri</h1>
+      <h2>The Gravity Trident</h2>
+
+      <p>
+        A multi-scale and multi-messenger approach to
+        testing general relativity through galaxy clusters,
+        cosmic large-scale structure and gravitational waves.
+      </p>
+
+      <a class="hero-button" href="#science">
+        Explore the Science
+      </a>
+    </header>
+
+    <!-- SCIENCE -->
+
+    <section id="science" class="section">
+      <div class="section-heading">
+        <div class="section-label">Research</div>
+        <h2>Three pillars. One test of gravity.</h2>
+      </div>
+
+      <p class="section-intro">
+        GravTri combines three complementary observational
+        probes to investigate gravitational physics across
+        different spatial scales, connecting the internal
+        structure of galaxy clusters with cosmological
+        structure formation and gravitational-wave lensing.
+      </p>
+
+      <div class="science-grid">
+
+        <article class="science-card">
+          <div class="pillar-number">PILLAR 01</div>
+          <h3>Gravitational Redshifts</h3>
+          <p>
+            Measuring gravitational redshifts in galaxy
+            clusters to probe their gravitational potentials
+            and test deviations from general relativity.
+          </p>
+        </article>
+
+        <article class="science-card">
+          <div class="pillar-number">PILLAR 02</div>
+          <h3>Galaxy-Cluster Clustering</h3>
+          <p>
+            Using the spatial distribution and clustering
+            statistics of galaxy clusters to investigate
+            the growth of cosmic structure and constrain
+            modified-gravity models.
+          </p>
+        </article>
+
+        <article class="science-card">
+          <div class="pillar-number">PILLAR 03</div>
+          <h3>Gravitational-Wave Lensing</h3>
+          <p>
+            Exploiting the strong gravitational lensing
+            of gravitational waves by galaxy clusters,
+            particularly their time delays, to test
+            gravitational physics.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- PUBLICATIONS -->
+
+    <section id="publications" class="section">
+      <div class="section-heading">
+        <div class="section-label">Scientific Output</div>
+        <h2>Publications</h2>
+      </div>
+
+      <p class="section-intro">
+        Selected publications related to the three
+        scientific pillars of GravTri.
+      </p>
+
+      <!-- Add actual papers here -->
+
+      <article class="publication">
+        <h3>Publications will appear here</h3>
+        <p>
+          Journal articles, preprints and links to
+          scientific results will be added progressively.
+        </p>
+      </article>
+    </section>
+
+    <hr class="divider">
+
+    <!-- TEAM -->
+
+    <section id="team" class="section">
+      <div class="section-heading">
+        <div class="section-label">People</div>
+        <h2>Team</h2>
+      </div>
+
+      <p class="section-intro">
+        Researchers and collaborators contributing
+        to the GravTri scientific programme.
+      </p>
+
+      <div class="team-grid">
+
+        <article class="team-card">
+          <h3>Eleni Tsaprazi</h3>
+          <p>
+            Project Lead<br>
+            Observatoire de Paris – PSL
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- NEWS -->
+
+    <section id="news" class="section">
+      <div class="section-heading">
+        <div class="section-label">Updates</div>
+        <h2>Latest News</h2>
+      </div>
+
+      <article class="news-item">
+        <div class="news-date">November 2026</div>
+        <div>
+          <h3>GravTri website launched</h3>
+          <p>
+            The GravTri research project website is
+            established to present the scientific
+            programme and its developments.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="section">
+      <div class="section-heading">
+        <div class="section-label">Get in Touch</div>
+        <h2>Contact</h2>
+      </div>
+
+      <div class="contact-box">
+        <h3>Eleni Tsaprazi</h3>
+
+        <p>
+          Observatoire de Paris – PSL<br>
+          France
+        </p>
+
+        <p>
+          Email:
+          <a href="mailto:eleni.tsaprazi@obspm.fr">
+            eleni.tsaprazi@obspm.fr
+          </a>
+        </p>
+
+        <p>
+          GitHub:
+          <a href="https://github.com/GravTri"
+             target="_blank" rel="noopener noreferrer">
+            github.com/GravTri
+          </a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © <span id="year"></span> GravTri —
+    The Gravity Trident
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
