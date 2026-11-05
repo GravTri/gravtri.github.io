@@ -311,31 +311,36 @@
       color: var(--muted);
     }
 
-    /* NEWS */
+    
+  /* NEWS */
 
-    .news-item {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 25px;
-      padding: 26px 0;
-      border-bottom: 1px solid var(--border);
-    }
+  .news-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 25px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+  }
 
-    .news-date {
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
+  .news-item:last-child {
+  border-bottom: none;
+  }
 
-    .news-item h3 {
-      margin: 0 0 6px;
-    }
+  .news-date {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  }
 
-    .news-item p {
-      margin: 0;
-      color: var(--muted);
-    }
+  .news-item h3 {
+  margin: 0 0 6px;
+  }
 
+  .news-item p {
+  margin: 0;
+  color: var(--muted);
+  }
+ 
     /* CONTACT */
 
     .contact-box {
