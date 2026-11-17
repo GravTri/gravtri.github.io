@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="GravTri — Le Trident de la Gravité : une approche cosmologique unifiée pour tester la gravitation à l’aide des amas de galaxies." name="description"/>
+<title>GravTri | Le Trident de la Gravité</title>
+<style>
+    :root {
+      --bg: #090e1b;
+      --surface: #131d30;
+      --surface-hover: #1b2942;
+      --text: #f0f3fa;
+      --muted: #aab9d0;
+      --accent: #b6a1ff;
+      --accent-light: #e0d7ff;
+      --border: rgba(255,255,255,0.10);
+      --max-width: 1150px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent-light);
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9,14,27,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1450px;
+      margin: auto;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.4;
+      color: white;
+      text-decoration: none;
+      max-width: 650px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-light);
+    }
+
+
+    /* LANGUAGE SWITCH */
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      white-space: nowrap;
+      font-weight: 600;
+      color: var(--accent-light) !important;
+    }
+
+    .language-switch:hover {
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+
+    /* HOME */
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px;
+      background:
+        radial-gradient(
+          ellipse at 50% 20%,
+          rgba(116,87,190,0.27),
+          transparent 60%
+        ),
+        var(--bg);
+    }
+
+    .hero-label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(4.5rem, 12vw, 8rem);
+      line-height: 1.05;
+      letter-spacing: -0.07em;
+      margin: 0;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--accent-light);
+      margin: 14px 0 30px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.18rem;
+      color: var(--muted);
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 38px;
+      padding: 12px 30px;
+      border: 1px solid var(--accent);
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .hero-button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* HOMEPAGE LOGO */
+
+    .hero-logo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .hero-logo img {
+      display: block;
+      width: min(100%, 300px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 90px 28px;
+      max-width: var(--max-width);
+      margin: auto;
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -0.04em;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      max-width: var(--max-width);
+      margin: auto;
+    }
+
+    /* SCIENCE */
+
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .science-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .science-card:hover {
+      background: var(--surface-hover);
+      transform: translateY(-4px);
+    }
+
+    .pillar-number {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    .science-card h3 {
+      font-size: 1.35rem;
+      line-height: 1.35;
+      margin: 18px 0;
+    }
+
+    .science-card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    /* PUBLICATIONS */
+
+    .publication {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .publication h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .publication p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .publication-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    /* TEAM */
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+    }
+
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .team-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .team-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    
+  /* NEWS */
+
+  .news-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 25px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+  }
+
+  .news-item:last-child {
+  border-bottom: none;
+  }
+
+  .news-date {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  }
+
+  .news-item h3 {
+  margin: 0 0 6px;
+  }
+
+  .news-item p {
+  margin: 0;
+  color: var(--muted);
+  }
+ 
+    /* CONTACT */
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 38px;
+      max-width: 750px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+    }
+
+    .email-button {
+      background: transparent;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      color: var(--accent-light);
+      padding: 10px 20px;
+      font: inherit;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .email-button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    #email-display {
+      margin-top: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* TABLET AND MOBILE */
+
+    @media (max-width: 1100px) {
+      .nav-inner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .brand {
+        max-width: 100%;
+      }
+
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      html {
+        scroll-padding-top: 145px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        padding: 14px 20px;
+      }
+
+      .brand {
+        font-size: 0.9rem;
+      }
+
+      .nav-links {
+        gap: 10px 16px;
+      }
+
+      .science-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .section {
+        padding: 65px 24px;
+      }
+
+      .hero {
+        min-height: 65vh;
+        padding: 90px 24px;
+      }
+
+      html {
+        scroll-padding-top: 180px;
+      }
+    }
+  </style>
+<link href="https://gravtri.github.io/" hreflang="en" rel="alternate"/><link href="https://gravtri.github.io/fr.html" hreflang="fr" rel="alternate"/></head>
+<body>
+<!-- NAVIGATION -->
+<nav aria-label="Navigation principale" class="navbar">
+<div class="nav-inner">
+<a class="brand" href="#home">GravTri – Le Trident de la Gravité : une approche cosmologique unifiée pour tester la gravitation avec les amas de galaxies</a>
+<div class="nav-links">
+<a href="#home">Accueil</a>
+<a href="#science">Science</a>
+<a href="#team">Équipe</a>
+<a href="#publications">Publications</a>
+<a href="#facilities">Infrastructures</a>
+<a href="#news">Actualités</a>
+<a href="#contact">Contact</a>
+<a aria-label="English version" class="language-switch" href="/" hreflang="en" lang="en">🇬🇧 EN</a></div>
+</div>
+</nav>
+<main>
+<!-- HOME -->
+<header class="hero" id="home">
+<div class="hero-label">Cosmologie · Gravitation · Grandes structures</div>
+<div class="hero-logo">
+<img alt="GravTri — Le Trident de la Gravité" src="/GravTri%20Cosmic%20Leaf%20Logo%20White.png"/>
+</div>
+<h2>Le Trident de la Gravité</h2>
+<p>Une approche multi-échelle et multi-messager pour mettre à l’épreuve la relativité générale à l’aide des amas de galaxies.</p>
+<a class="hero-button" href="#science">Découvrir la science</a>
+</header>
+<!-- SCIENCE -->
+<section class="section" id="science">
+<div class="section-heading">
+<div class="section-label">Recherche</div>
+<h2>Trois sondes. Un cadre commun pour tester la gravitation.</h2>
+</div>
+<p class="section-intro">GravTri associe les décalages gravitationnels vers le rouge, les effets de lentille gravitationnelle forte sur les ondes gravitationnelles et le regroupement spatial des amas de galaxies. Ces trois sondes observationnelles complémentaires permettent d’étudier la gravitation à différentes échelles physiques.</p>
+<div class="science-grid">
+<article class="science-card">
+<div class="pillar-number">Volet I : échelles intra-amas</div>
+<h3>Décalages gravitationnels vers le rouge</h3>
+<p>Mesurer les décalages gravitationnels vers le rouge dans les amas de galaxies afin de sonder la relation entre les potentiels gravitationnels et la masse, et de rechercher d’éventuels écarts à la relativité générale.</p>
+</article>
+<article class="science-card">
+<div class="pillar-number">Volet II : échelles des amas</div>
+<h3>Regroupement spatial des amas</h3>
+<p>Exploiter la distribution spatiale et les statistiques de regroupement des amas de galaxies pour étudier l’évolution de la croissance des structures cosmiques avec le redshift et contraindre les écarts à la relativité générale.</p>
+</article>
+<article class="science-card">
+<div class="pillar-number">Volet III : échelles inter-amas</div>
+<h3>Effets de lentille sur les ondes gravitationnelles</h3>
+<p>Exploiter les effets de lentille gravitationnelle forte exercés par les amas de galaxies sur les ondes gravitationnelles pour tester la physique gravitationnelle.</p>
+</article>
+</div>
+</section>
+<hr class="divider"/>
+<!-- TEAM -->
+<section class="section" id="team">
+<div class="section-heading">
+<div class="section-label">Personnes</div>
+<h2>Équipe</h2>
+</div>
+<p class="section-intro">Chercheurs, chercheuses et étudiants contribuant actuellement à GravTri.</p>
+<!-- CURRENT TEAM -->
+<div class="team-grid">
+<article class="team-card">
+<h3>Eleni Tsaprazi</h3>
+<p>
+            Responsable du projet<br/>
+            LUX, Observatoire de Paris
+          </p>
+</article>
+<article class="team-card">
+<h3>Federico Marulli</h3>
+<p>
+            Collaborateur<br/>
+            Université de Bologne
+          </p>
+</article>
+<article class="team-card">
+<h3>Amandine Le Brun</h3>
+<p>
+            Collaborateur<br/>
+            LUX, Observatoire de Paris
+          </p>
+</article>
+<article class="team-card">
+<h3>Giorgio F. Lesci</h3>
+<p>
+            Collaborateur<br/>
+            Université de Bologne
+          </p>
+</article>
+<article class="team-card">
+<h3>Ettore Delpogetto</h3>
+<p>
+            Étudiant en master : lentilles gravitationnelles d’ondes gravitationnelles<br/>
+            Université de Bologne
+          </p>
+</article>
+<article class="team-card">
+<h3>Matteo Macchione</h3>
+<p>
+            Diplômé de master : décalages gravitationnels vers le rouge<br/>
+            Université de Bologne<br/>
+<a href="https://amslaurea.unibo.it/id/eprint/39453/" rel="noopener noreferrer" target="_blank">
+              Mémoire de master
+            </a>
+</p>
+</article>
+</div>
+<!-- PAST RESEARCH INTERNS -->
+<div class="section-heading" style="margin-top: 55px; margin-bottom: 22px;">
+<h3 style="font-size: 1.35rem; font-weight: 600; color: var(--muted);">Anciens stagiaires de recherche</h3>
+</div>
+<div class="team-grid">
+<article class="team-card">
+<h3>Arvind Chandrasekar</h3>
+<p>
+            Stagiaire de recherche (licence)<br/>
+            Imperial College London
+          </p>
+</article>
+<article class="team-card">
+<h3>Camille de Saintignon</h3>
+<p>
+            Stagiaire de recherche (licence)<br/>
+            Université Paris Cité
+          </p>
+</article>
+</div>
+</section>
+<hr class="divider"/>
+<!-- PUBLICATIONS -->
+<section class="section" id="publications">
+<div class="section-heading">
+<div class="section-label">Production scientifique</div>
+<h2>Publications</h2>
+</div>
+<p class="section-intro">Sélection de publications associées aux trois volets scientifiques de GravTri.</p>
+<article class="publication">
+<h3>
+          Probing modified gravity with galaxy-cluster-lensed
+          gravitational-wave time delays: impact of systematic effects
+        </h3>
+<p>
+          Tsaprazi et al. (2026) · prépublication arXiv
+        </p>
+<div class="publication-links">
+<a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260924351T/abstract" rel="noopener noreferrer" target="_blank">NASA ADS</a>
+<a href="https://arxiv.org/abs/2609.24351" rel="noopener noreferrer" target="_blank">arXiv</a>
+</div>
+</article>
+<article class="publication">
+<h3>
+          Euclid preparation: CX. Testing template-fitting models
+          for the multipoles of the two-point clustering
+          of galaxy clusters
+        </h3>
+<p>
+          Collaboration Euclid, Tsaprazi et al. (2026) ·
+          Astronomy &amp; Astrophysics, 713, A282
+        </p>
+<div class="publication-links">
+<a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...713A.282E/abstract" rel="noopener noreferrer" target="_blank">NASA ADS</a>
+<a href="https://doi.org/10.1051/0004-6361/202660667" rel="noopener noreferrer" target="_blank">Article</a>
+</div>
+</article>
+<article class="publication">
+<h3>
+          Cluster gravitational redshifts:
+          uncertainties and survey requirements
+        </h3>
+<p>
+          Tsaprazi et al. (2026) ·
+          Monthly Notices of the Royal Astronomical Society,
+          549, stag1049
+        </p>
+<div class="publication-links">
+<a href="https://ui.adsabs.harvard.edu/abs/2026MNRAS.549g1049T/abstract" rel="noopener noreferrer" target="_blank">NASA ADS</a>
+<a href="https://doi.org/10.1093/mnras/stag1049" rel="noopener noreferrer" target="_blank">Article</a>
+</div>
+</article>
+<article class="publication">
+<h3>
+          Beyond general relativity:
+          probing gravity with gravitational redshifts
+        </h3>
+<p>
+          Tsaprazi et al. (2025) ·
+          livre blanc ESO « Expanding Horizons » · prépublication arXiv
+        </p>
+<div class="publication-links">
+<a href="https://ui.adsabs.harvard.edu/abs/2025arXiv251213221T/abstract" rel="noopener noreferrer" target="_blank">NASA ADS</a>
+<a href="https://arxiv.org/abs/2512.13221" rel="noopener noreferrer" target="_blank">arXiv</a>
+</div>
+</article>
+</section>
+<hr class="divider"/>
+<!-- SURVEYS & FACILITIES -->
+<section class="section" id="facilities">
+<div class="section-heading">
+<div class="section-label">Présence internationale</div>
+<h2>Relevés et infrastructures</h2>
+</div>
+<p class="section-intro">Les membres de l’équipe GravTri participent à des relevés et à des infrastructures scientifiques internationaux, en cours ou en préparation.</p>
+<div class="science-grid">
+<article class="science-card">
+<h3>Euclid</h3>
+<a href="https://www.esa.int/Science_Exploration/Space_Science/Euclid" rel="noopener noreferrer" target="_blank">Site de la mission</a>
+</article>
+<article class="science-card">
+<h3>Wide-field Spectroscopic Telescope</h3>
+<a href="https://wstelescope.eu/" rel="noopener noreferrer" target="_blank">Site du projet</a>
+</article>
+<article class="science-card">
+<h3>Einstein Telescope</h3>
+<a href="https://einsteintelescope.eu/" rel="noopener noreferrer" target="_blank">Site du projet</a>
+</article>
+</div>
+</section>
+<hr class="divider"/>
+<!-- NEWS -->
+<section class="section" id="news">
+<div class="section-heading">
+<div class="section-label">Actualités</div>
+<h2>Dernières actualités</h2>
+</div>
+<article class="news-item">
+<div class="news-date">Octobre 2026</div>
+<div>
+<p>GravTri aux <a href="https://jgatcg26.sciencesconf.org/" rel="noopener noreferrer" target="_blank">
+      Journées Scientifiques Galaxies de l'ATCG 2026
+      </a>
+      (<a href="/JG_ATCG_Tsaprazi.pdf" rel="noopener noreferrer" target="_blank">PDF</a>).
+    </p>
+</div>
+</article>
+</section>
+<hr class="divider"/>
+<!-- CONTACT -->
+<section class="section" id="contact">
+<div class="section-heading">
+<div class="section-label">Nous contacter</div>
+<h2>Contact</h2>
+</div>
+<div class="contact-box">
+<h3>Eleni Tsaprazi</h3>
+<p>
+          LUX<br/>
+          Observatoire de Paris<br/>
+          Université PSL<br/>
+          Sorbonne Université<br/>
+          CNRS<br/>
+          92190 Meudon, France
+        </p>
+<button aria-controls="email-display" aria-expanded="false" class="email-button" id="reveal-email" type="button">Afficher l’adresse électronique</button>
+<p aria-live="polite" id="email-display"></p>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+    © <span id="year"></span> GravTri —
+    The Gravity Trident
+  </footer>
+<script>
+    // Mise à jour automatique de l’année
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Construction de l’adresse électronique après un clic
+    const emailButton =
+      document.getElementById("reveal-email");
+
+    const emailDisplay =
+      document.getElementById("email-display");
+
+    emailButton.addEventListener("click", function () {
+      const localParts = ["eleni", "tsaprazi"];
+      const domainParts = ["obspm", "fr"];
+
+      const address =
+        localParts.join(".") +
+        String.fromCharCode(64) +
+        domainParts.join(".");
+
+      const link = document.createElement("a");
+      link.href = "mailto:" + address;
+      link.textContent = address;
+
+      emailDisplay.replaceChildren(link);
+      emailButton.setAttribute("aria-expanded", "true");
+      emailButton.hidden = true;
+    });
+  </script>
+</body>
+</html>
